@@ -2,4 +2,7 @@ node_modules
 playwright-report
 test-results
 **/*.png
+.hyperexecute
+.update*
 hyperexecute
+hyperexecute-cli.log

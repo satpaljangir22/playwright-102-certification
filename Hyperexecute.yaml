@@ -3,15 +3,14 @@ version: "0.1"
 globalTimeout: 90
 testSuiteTimeout: 90
 testSuiteStep: 90
-parallelism: 2
+parallelism: 1
 runson: ${matrix.os}
 matrix:
-  os: ["win11"]
-  browser: ["edge", "Chrome"]
+  os: ["win11", "linux"]
 autosplit: true
 retryOnFailure: true
 maxRetries: 1
-concurrency: 2
+concurrency: 1
 pre:
   - npm install
   - npx playwright install
@@ -24,4 +23,4 @@ testDiscovery:
   command: grep -lr 'test' tests
 testRunnerCommand: npx playwright test
 
-jobLabel: [Playwright Paralled Execution]
+jobLabel: [Playwright Multi OS]
