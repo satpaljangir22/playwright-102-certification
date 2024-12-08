@@ -12,5 +12,5 @@ tasks:
 
     init: |
       echo "Starting Execution"
-      ./hyperexecute --user=$LT_USERNAME --key=$LT_ACCESS_KEY --config yaml/win/.hyperexecute_autosplits.yaml --download-artifacts --force-clean-artifacts
+      ./hyperexecute --user satpaljangir22 --key VMLFdKdIB2MxcQCLlCr2i6ws1803yJVwWIvsQAtsSPJIJJcD98 --config Hyperexecute.yaml
       echo "Execution Completed"
