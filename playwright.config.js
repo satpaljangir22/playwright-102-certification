@@ -8,8 +8,8 @@ const capabilities = {
     platform: "Windows 10",
     build: "Playwright Test Build",
     name: "Playwright Test",
-    user: "satpaljangir22",
-    accessKey: "VMLFdKdIB2MxcQCLlCr2i6ws1803yJVwWIvsQAtsSPJIJJcD98",
+    user: process.env.LT_USERNAME,
+    accessKey: process.env.LT_ACCESS_KEY,
     network: true,
     video: true,
     console: true,
@@ -23,7 +23,7 @@ module.exports = defineConfig({
   testDir: "tests",
   projects: [
     {
-      name: "Chrome Browser",
+      name: "Playwright 102 on Chrome",
       use: {
         connectOptions: {
           wsEndpoint: `wss://cdp.lambdatest.com/playwright?capabilities=
