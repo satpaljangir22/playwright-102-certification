@@ -4,5 +4,6 @@ test-results
 **/*.png
 .hyperexecute
 .update*
+.hyperexecute/
 hyperexecute
 hyperexecute-cli.log

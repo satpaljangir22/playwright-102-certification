@@ -7,5 +7,5 @@ tasks:
 
     init: |
       echo "Starting Execution"
-      ./hyperexecute --user $LT_USER_NAME --key $LT_PASSWORD --config Hyperexecute.yaml
+      ./hyperexecute --user $LT_USERNAME --key $LT_ACCESS_KEY --config Hyperexecute.yaml
       echo "Execution Completed"

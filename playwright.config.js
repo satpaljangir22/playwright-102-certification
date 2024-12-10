@@ -13,14 +13,12 @@ const capabilities = {
     network: true,
     video: true,
     console: true,
-    tunnel: false, // Add tunnel configuration if testing locally hosted webpage
-    tunnelName: "", // Optional
-    geoLocation: "", // country code can be fetched from https://www.lambdatest.com/capabilities-generator/
   },
 };
 
 module.exports = defineConfig({
   testDir: "tests",
+  workers: 3,
   projects: [
     {
       name: "Playwright 102 on Chrome",
@@ -32,4 +30,5 @@ module.exports = defineConfig({
       },
     },
   ],
+  reporter: [["html", { open: "never" }]],
 });

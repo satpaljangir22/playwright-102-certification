@@ -3,10 +3,10 @@ version: "0.1"
 globalTimeout: 90
 testSuiteTimeout: 90
 testSuiteStep: 90
-parallelism: 1
+parallelism: 2
 runson: ${matrix.os}
 matrix:
-  os: ["win11", "linux"]
+  os: ["win", "linux"]
   browser: ["Chrome"]
   version: ["latest"]
 autosplit: true
@@ -15,7 +15,7 @@ maxRetries: 1
 concurrency: 1
 pre:
   - npm install
-  - npx playwright install
+  - npx playwright install chromium
 cacheKey: '{{ checksum "package-lock.json" }}'
 cacheDirectories:
   - node_modules
@@ -23,6 +23,11 @@ testDiscovery:
   type: raw
   mode: dynamic
   command: grep -lr 'test' tests
-testRunnerCommand: npx playwright test
+testRunnerCommand: npx playwright test $test
 
-jobLabel: [Playwright 102]
+uploadArtifacts:
+  - name: Execution Report
+    path:
+      - playwright-report/index.html
+
+jobLabel: [Playwright 102 - Certification Build]
